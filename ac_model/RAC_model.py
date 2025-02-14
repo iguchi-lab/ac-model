@@ -1,5 +1,4 @@
-from. import main
-
+import ac_model.main as ac
 from math import floor
 
 C_af_H = 0.8
