@@ -1,7 +1,7 @@
 import ac_model.main as ac
 import calc_refrigerant
 
-class AirconModel_DuctCentral(AirconSpec):
+class AirconModel_DuctCentral(ac.AirconSpec):
     """
     DuctCentralModelモデルを適用するエアコンの派生クラス。
     """
