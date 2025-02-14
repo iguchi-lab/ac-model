@@ -6,23 +6,7 @@ A_e_hex_small_H = 6.2        #定格冷却能力が5.6kW未満の場合のA_e,he
 A_f_hex_large_H = 0.3        #定格冷却能力が5.6kW以上の場合のA_f,hex
 A_e_hex_large_H = 10.6       #定格冷却能力が5.6kW以上の場合のA_e,hex
 
-def calc_e_ref_H_th(Theta_ref_evp, Theta_ref_cnd, Theta_ref_SC, Theta_ref_SH):
-    P_ref_evp         = get_f_p_sgas(Theta_ref_evp)                                         # 蒸発圧力 (12)
-    P_ref_cnd         = get_f_p_sgas(Theta_ref_cnd)                                         # 凝縮圧力 (11)
-    Theta_ref_cnd_out = Theta_ref_cnd - Theta_ref_SC                                        # 凝縮器出力温度 (10)
-    h_ref_cnd_out     = get_f_H_liq(P_ref_cnd, Theta_ref_cnd_out)                           # 凝縮器出口比エンタルピー (9)
-    Theta_ref_comp_in = Theta_ref_evp + Theta_ref_SH                                        # 圧縮機吸込温度 (8)
-    P_ref_comp_in     = P_ref_evp                                                           # 圧縮機吸込圧力 (7)
-    h_ref_comp_in     = get_f_H_gas_comp_in(P_ref_comp_in, Theta_ref_comp_in)               # 圧縮機吸込エンタルピー (6)
-    S_ref_comp_in     = get_f_S_gas(P_ref_comp_in, h_ref_comp_in)                           # 圧縮機吸込比エントロピー (5)
-    S_ref_comp_out    = S_ref_comp_in                                                       # 圧縮機吐出比エントロピー (4)
-    P_ref_comp_out    = P_ref_cnd                                                           # 圧縮機吐出圧力 (3)
-    h_ref_comp_out    = get_f_H_gas_comp_out(P_ref_comp_out, S_ref_comp_out)                # 圧縮機吐出比エンタルピー (2)
-    e_ref_H_th        = (h_ref_comp_out - h_ref_cnd_out) / (h_ref_comp_out - h_ref_comp_in) # ヒートポンプサイクルの理論暖房効率 (1)
-
-    return e_ref_H_th
-
-class AirconModel_LatentEvaluate(AirconSpec):
+class AirconModel_LatentEvaluate(ac.AirconSpec):
     """
     DuctCentralModelモデルを適用するエアコンの派生クラス。
     """
