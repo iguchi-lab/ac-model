@@ -1,4 +1,4 @@
-from . import main as ac
+import ac_model.main as ac
 
 BF          = 0.2                    # バイパスファクター
 KEYS_CRIEPI = ['min', 'rtd', 'max']  # CRIEPIモデルで使用するキー
