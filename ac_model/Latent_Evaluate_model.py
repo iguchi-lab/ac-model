@@ -1,5 +1,5 @@
-from . import main
-from . import calc_refrigerant
+import ac_model.main as ac
+import calc_refrigerant
 
 A_f_hex_small_H = 0.2        #定格冷却能力が5.6kW未満の場合のA_f,hex
 A_e_hex_small_H = 6.2        #定格冷却能力が5.6kW未満の場合のA_e,hex
