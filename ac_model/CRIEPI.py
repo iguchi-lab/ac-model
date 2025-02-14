@@ -33,7 +33,7 @@ def avoid_over_saturation(Td, X, threshold=ERROR_THRESHOLD, max_temp=MAX_TEMP):
     else:
         return right
 
-class AirconModel_CRIEPI(ac.AirconSpec):
+class AirconModel(ac.AirconSpec):
     """
     CRIEPIモデルを適用するエアコンの派生クラス。
     """
