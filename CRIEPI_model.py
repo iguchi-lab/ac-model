@@ -91,7 +91,7 @@ class AirconModel_CRIEPI(ac.AirconSpec):
         """
         CRIEPIモデルの準備を行い、係数を求める。
         """
-        for mode in Const.MODES:
+        for mode in ac.Const.MODES:
             eta_th = {key: self._calculate_efficiency(mode, key) for key in KEYS_CRIEPI}
             COP    = self.COP[mode]
             Q      = self.spec['Q'][mode]
