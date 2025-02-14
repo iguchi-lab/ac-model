@@ -1,6 +1,3 @@
-import ac_model.main as ac
-import archenv.archenv as ae
-
 BF          = 0.2                    # バイパスファクター
 KEYS_CRIEPI = ['min', 'rtd', 'max']  # CRIEPIモデルで使用するキー
 ERROR_THRESHOLD = 1e-3               # 温度の許容誤差
