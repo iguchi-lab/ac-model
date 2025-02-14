@@ -200,7 +200,7 @@ def calc_p_i_eq24(i, q_rtd_C):
                                                        p_i_C * ((q_rtd_C - 4000) / (7100 - 4000))
     elif 7100 <= q_rtd_C:                       return p_i_C
 
-class AirconModel_RAC(ac.AirconSpec):
+class AirconModel(ac.AirconSpec):
     """
     RACモデルを適用するエアコンの派生クラス。
     """
