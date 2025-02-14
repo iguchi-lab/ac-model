@@ -10,6 +10,5 @@ setup(
         "pandas",
         "git+https://github.com/iguchi-lab/archenv.git#egg=archenv",
     ],
-    ],
     include_package_data=True,
-  
+)
