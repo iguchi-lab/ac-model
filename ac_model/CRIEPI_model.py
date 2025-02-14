@@ -2,6 +2,7 @@ import ac_model.main as ac
 import archenv.archenv as ae
 import archenv.JIS as JIS
 import numpy as np
+import math
 
 BF          = 0.2                    # バイパスファクター
 KEYS_CRIEPI = ['min', 'rtd', 'max']  # CRIEPIモデルで使用するキー
