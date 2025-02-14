@@ -7,7 +7,7 @@ A_e_hex_small_H = 6.2        #定格冷却能力が5.6kW未満の場合のA_e,he
 A_f_hex_large_H = 0.3        #定格冷却能力が5.6kW以上の場合のA_f,hex
 A_e_hex_large_H = 10.6       #定格冷却能力が5.6kW以上の場合のA_e,hex
 
-class AirconModel_LatentEvaluate(ac.AirconSpec):
+class AirconModel(ac.AirconSpec):
     """
     DuctCentralModelモデルを適用するエアコンの派生クラス。
     """
