@@ -1,5 +1,5 @@
-from . import main
-from . import calc_refrigerant
+import ac_model.main as ac
+import calc_refrigerant
 
 class AirconModel_DuctCentral(AirconSpec):
     """
