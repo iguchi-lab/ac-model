@@ -1,4 +1,5 @@
 import ac_model.main as ac
+import archenv as ae
 
 BF          = 0.2                    # バイパスファクター
 KEYS_CRIEPI = ['min', 'rtd', 'max']  # CRIEPIモデルで使用するキー
