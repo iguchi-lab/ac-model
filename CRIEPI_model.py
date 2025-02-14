@@ -2,8 +2,10 @@ from . import main
 
 BF          = 0.2                    # バイパスファクター
 KEYS_CRIEPI = ['min', 'rtd', 'max']  # CRIEPIモデルで使用するキー
+ERROR_THRESHOLD = 1e-3               # 温度の許容誤差
+MAX_TEMP        = 50                 # 最大温度探索範囲
 
-def avoid_over_saturation(Td, X, threshold=Const.ERROR_THRESHOLD, max_temp=Const.MAX_TEMP):
+def avoid_over_saturation(Td, X, threshold=ERROR_THRESHOLD, max_temp=MAX_TEMP):
     """
     飽和超過を回避するため、等エンタルピー線に沿って温度を調整する。
     """
