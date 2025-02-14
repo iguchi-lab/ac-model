@@ -35,8 +35,8 @@ class AirconModel_CRIEPI(ac.AirconSpec):
     """
     def __init__(self, spec):
         super().__init__(spec)
-        self.coeffs = {mode: {} for mode in Const.MODES}  # CRIEPIモデル用
-        self.Pc     = {mode: {} for mode in Const.MODES}  # CRIEPIモデル用
+        self.coeffs = {mode: {} for mode in ac.Const.MODES}  # CRIEPIモデル用
+        self.Pc     = {mode: {} for mode in ac.Const.MODES}  # CRIEPIモデル用
         self.prepare_CRIEPI_model()
 
     def _calculate_efficiency(self, mode, key):
