@@ -1,5 +1,6 @@
 import ac_model.main as ac
 import archenv.archenv as ae
+import archenv.JIS as JIS
 
 BF          = 0.2                    # バイパスファクター
 KEYS_CRIEPI = ['min', 'rtd', 'max']  # CRIEPIモデルで使用するキー
@@ -58,22 +59,22 @@ class AirconModel_CRIEPI(ac.AirconSpec):
         """
         冷房時の熱効率を計算。
         """
-        M_evp = (1 - BF) * ae.air_density(ae.JIS.T_C_IN) * V_inner
-        T_evp = ae.JIS.T_C_IN - Q / (M_evp * ae.air_specific_heat(ae.JIS.X_C_IN))
-        T_evp = avoid_over_saturation(T_evp, ae.JIS.X_C_IN)
-        M_cnd = (1 - BF) * ae.air_density(ae.JIS.T_C_EX) * V_outer
-        T_cnd = ae.JIS.T_C_EX + (Q + P) / (M_cnd * ae.air_specific_heat(ae.JIS.X_C_EX))
+        M_evp = (1 - BF) * ae.air_density(JIS.T_C_IN) * V_inner
+        T_evp = JIS.T_C_IN - Q / (M_evp * ae.air_specific_heat(JIS.X_C_IN))
+        T_evp = avoid_over_saturation(T_evp, JIS.X_C_IN)
+        M_cnd = (1 - BF) * ae.air_density(JIS.T_C_EX) * V_outer
+        T_cnd = JIS.T_C_EX + (Q + P) / (M_cnd * ae.air_specific_heat(JIS.X_C_EX))
         return (T_evp + 273.15) / (T_cnd - T_evp)
 
     def _calc_heating_efficiency(self, Q, P, V_inner, V_outer):
         """
         暖房時の熱効率を計算。
         """
-        M_evp = (1 - BF) * ae.air_density(ae.JIS.T_H_EX) * V_outer
-        T_evp = ae.JIS.T_H_EX - (Q - P) / (M_evp * ae.air_specific_heat(ae.JIS.X_H_EX))
-        T_evp = avoid_over_saturation(T_evp, ae.JIS.X_H_EX)
-        M_cnd = (1 - BF) * ae.air_density(ae.JIS.T_H_IN) * V_inner
-        T_cnd = ae.JIS.T_H_IN + Q / (M_cnd * ae.air_specific_heat(ae.JIS.X_H_IN))
+        M_evp = (1 - BF) * ae.air_density(JIS.T_H_EX) * V_outer
+        T_evp = JIS.T_H_EX - (Q - P) / (M_evp * ae.air_specific_heat(JIS.X_H_EX))
+        T_evp = avoid_over_saturation(T_evp, JIS.X_H_EX)
+        M_cnd = (1 - BF) * ae.air_density(JIS.T_H_IN) * V_inner
+        T_cnd = JIS.T_H_IN + Q / (M_cnd * ae.air_specific_heat(JIS.X_H_IN))
         return (T_cnd + 273.15) / (T_cnd - T_evp)
 
     def _solve_coefficients(self, COP, Q, eta_th):
