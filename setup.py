@@ -8,7 +8,10 @@ setup(
         "requests",
         "numpy",
         "pandas",
-        "git+https://github.com/iguchi-lab/archenv.git#egg=archenv",
+        "archenv",  # GitHub リンクを直接書かない
+    ],
+    dependency_links=[
+        "https://github.com/iguchi-lab/archenv.git#egg=archenv",
     ],
     include_package_data=True,
     zip_safe=False,
