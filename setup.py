@@ -11,4 +11,5 @@ setup(
         "git+https://github.com/iguchi-lab/archenv.git#egg=archenv",
     ],
     include_package_data=True,
+    zip_safe=False,
 )
