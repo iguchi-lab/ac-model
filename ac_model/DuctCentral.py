@@ -2,7 +2,7 @@ import ac_model.main as ac
 import ac_model.calc_refrigerant
 import archenv.archenv as ae
 
-class AirconModel_DuctCentral(ac.AirconSpec):
+class AirconModel(ac.AirconSpec):
     """
     DuctCentralModelモデルを適用するエアコンの派生クラス。
     """
