@@ -305,6 +305,8 @@ class AirconModel(ac.AirconSpec):
     def _estimate_heating_COP(self, q_hs_rtd_H, q_hs_mid_H, q_hs_min_H, P_hs_rtd_H,
                               V_fan_rtd_H, V_fan_mid_H, P_fan_rtd_H, P_fan_mid_H, V_hs_dsgn_H,
                               Theta, h, Theta_hs_in, X_hs_in, q_hs_H, V_hs_supply):
+        
+        Theta_hs_out = Theta_hs_in + q_hs_CS / (c_p_air * rho_air * V_hs_supply / 3600)
         C_df_H = 0.77 if (Theta < 5.0) and (h >= 80.0) else 1.0
 
         q_hs_H = q_hs_H * (1 / C_df_H)
