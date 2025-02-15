@@ -1,5 +1,5 @@
 import ac_model.main as ac
-from ac_model.calc_refrigerant import get_f_p, get_f_H_gas_comp_in, get_f_H_gas_comp_out,
+from ac_model.calc_refrigerant import get_f_p, get_f_H_gas_comp_in, get_f_H_gas_comp_out,\
                                       f_S_gas, f_H_liq, calc_e_ref_H_th
 import archenv.archenv as ae
 
