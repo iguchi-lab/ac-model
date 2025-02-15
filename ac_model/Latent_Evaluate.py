@@ -171,8 +171,8 @@ class AirconModel(ac.AirconSpec):
         print('q_hs_H', q_hs_H)
 
         #潜熱評価モデル（細井先生）の計算式
-        A_f_hex = A_f_hex_small_H if q_hs_rtd_C < 5600 else A_f_hex_large_H
-        A_e_hex = A_e_hex_small_H if q_hs_rtd_C < 5600 else A_e_hex_large_H
+        A_f_hex = A_f_hex_small_H if q_hs_rtd_H < 5600 else A_f_hex_large_H
+        A_e_hex = A_e_hex_small_H if q_hs_rtd_H < 5600 else A_e_hex_large_H
 
         #潜熱評価モデル（細井先生）の計算式
         x = q_hs_H / 1000
