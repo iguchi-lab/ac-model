@@ -1,5 +1,3 @@
-from scipy import optimize
-
 c_p_air = 1006.0                # 空気の比熱       [J/Kg・K]
 rho_air = 1.2                   # 空気の密度       [kg/m3]
 L_wtr   = 2500.8 - 2.3668 * 27  # 水の蒸発潜熱     [kJ/kg]
