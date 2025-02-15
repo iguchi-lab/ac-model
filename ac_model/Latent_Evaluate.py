@@ -1,7 +1,20 @@
 import ac_model.main as ac
-import ac_model.calc_refrigerant
+from calc_refrigerant import get_f_p, get_f_H_gas_comp_in, get_f_H_gas_comp_out, f_S_gas, f_H_liq, calc_e_ref_H_th
 import archenv.archenv as ae
 
+c_p_air = 1006.0                # 空気の比熱       [J/Kg・K]
+rho_air = 1.2                   # 空気の密度       [kg/m3]
+L_wtr   = 2500.8 - 2.3668 * 27  # 水の蒸発潜熱     [kJ/kg]
+c_p_w   = 1.846                 # 水蒸気の定圧比熱 [J/Kg・K]
+F       = 101325                # 大気圧           [Pa]
+A_f_hex = 0.23559               # 室内機熱交換器の前面面積のうち熱交換に有効な面積 [m2]
+A_e_hex = 6.396                 # 室内機熱交換器の表面積のうち熱交換に有効な面積 [m2]
+
+# 表1 単位面積当たりの必要暖房能力及び冷房能力 [W/m2]
+table_1 = [
+    (73.91, 64.32, 62.65, 66.99, 72.64, 61.34, 64.55, 00.00),
+    (37.61, 36.55, 42.34, 54.08, 61.69, 60.79, 72.53, 61.56)
+]
 A_f_hex_small_H = 0.2        #定格冷却能力が5.6kW未満の場合のA_f,hex
 A_e_hex_small_H = 6.2        #定格冷却能力が5.6kW未満の場合のA_e,hex
 A_f_hex_large_H = 0.3        #定格冷却能力が5.6kW以上の場合のA_f,hex
