@@ -1,4 +1,6 @@
 import numpy as np
+from scipy import optimize
+
 import ac_model.main as ac
 from ac_model.calc_refrigerant import get_f_p_sgas, get_f_H_gas_comp_in, get_f_H_gas_comp_out,\
                                       get_f_S_gas, get_f_H_liq, calc_e_ref_H_th
